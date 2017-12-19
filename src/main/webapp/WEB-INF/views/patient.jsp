@@ -94,8 +94,8 @@
 					<hr>
 					<ul>
 						<li><strong>Email: </strong>{{email}}</li>
-						<li><strong>Pesel: </strong>{{pesel}}</li>
 						<li><strong>Phone no: </strong>{{phone}}</li>
+						<li><strong>Pesel: </strong>{{pesel}}</li>
 						<li><strong>Address: </strong><br>
 							<span>ul. {{street}}</span><br>
 							<span>{{postcode}} {{city}}</span><br></li>
