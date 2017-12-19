@@ -21,7 +21,6 @@
 			<div class="col-sm-3">
 				<h2 class="text-center">ADD NEW PATIENT</h2>
 				<form:form method="post" modelAttribute="patient" id="patientForm" >
-				<!-- <div class="form-group"> -->
 					
 					First name:<form:input path="firstname" id="firstname" class="form-control"/>
 					<form:errors path="firstname" />
@@ -32,7 +31,7 @@
 						<br>
 					Email:
 					<form:input path="email" id="email" class="form-control"/>
-					<p>${alert}</p>
+					<span>${alert}</span>
 					<form:errors path="email" />
 					<br>
 					Phone Number:
@@ -61,7 +60,7 @@
 					<br>
 					<input type="submit" value="Add" class="btn btn-primary add-patient"/>
 				</form:form>
-				<!-- </div> -->
+				
 			</div>
 			<div class="col-sm-3">
 				<h2 class="text-center">LIST OF PATIENTS</h2>

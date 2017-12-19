@@ -6,7 +6,7 @@
 	<groupId>pl.physio</groupId>
 	<artifactId>PhysioApp</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>jar</packaging>
+	<packaging>war</packaging>
 
 	<name>PhysioApp_beta</name>
 	<description>Final project - CodersLab Java Web Developer Course</description>
