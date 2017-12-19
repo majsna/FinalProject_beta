@@ -21,6 +21,7 @@
 		From: <input type="text" name="fromDate" class="datepicker form-control"/>
 		To: <input type="text" name="toDate" class="datepicker form-control"/>
 		<input type="submit" value="Filter" class="btn btn-default"/>
+		<a href="<c:url value="/calendar"/>" class="btn btn-default">Reset</a>
 	</form>
 	
 	<p class="text-center error">${message}</p>

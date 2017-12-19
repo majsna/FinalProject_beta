@@ -15,7 +15,7 @@ public interface VisitRepository extends JpaRepository<Visit, Long> {
 	List<Visit> customFindByDateAndTime();
 	
 	@Query("SELECT v FROM Visit v WHERE v.date >=:todayParam ORDER BY date asc, hour asc")
-	List<Visit> customFindByDateAndTimeFuture(@Param("todayParam") Date todayParam);
+	List<Visit> customFutureVisits(@Param("todayParam") Date todayParam);
 	
 	@Query("SELECT v FROM Visit v WHERE v.patient.id =:patientId AND v.date >=:todayParam ORDER BY v.date asc, v.hour asc ")
 	List<Visit> customFindByPatientFuture(@Param("patientId") long patientId,

@@ -48,7 +48,7 @@ public class VisitController {
 	
 	@RequestMapping("")
 	public String viewVisits(Model model) {
-		model.addAttribute("visits", visitRepository.customFindByDateAndTimeFuture(new Date((new java.util.Date()).getTime())));
+		model.addAttribute("visits", visitRepository.customFutureVisits(new Date((new java.util.Date()).getTime())));
 		return "calendar";		
 	}
 	
@@ -65,7 +65,7 @@ public class VisitController {
 			lastsearch = (List<Visit>)sess.getAttribute("lastsearch");
 			sessExist = true;
 		}
-		List<Visit> primarySearch = visitRepository.customFindByDateAndTimeFuture(new Date((new java.util.Date()).getTime()));
+		List<Visit> primarySearch = visitRepository.customFutureVisits(new Date((new java.util.Date()).getTime()));
 		if(fromDate.equals("") || toDate.equals("")) {
 			model.addAttribute("message", message1);
 			if(sessExist) {
@@ -156,16 +156,29 @@ public class VisitController {
 	}
 	
 	@RequestMapping(value="/edit/{id}", method=RequestMethod.GET)
-	public String addVisitForm(Model model, @PathVariable long id) {
+	public String editVisitForm(Model model, @PathVariable long id) {
 		Visit visit = visitRepository.findOne(id);
 		model.addAttribute("visit",visit);
 		return "edit_visit_form";
 	}
 	
 	@RequestMapping(value="/edit/{id}", method=RequestMethod.POST)
-	public String addVisitForm(@Valid Visit visit, BindingResult result, @PathVariable long id) {
+	public String editVisit(@Valid Visit visit, BindingResult result, @PathVariable long id, HttpSession sess, Model model) {
 		if(result.hasErrors()) {
 			return "edit_visit_form";
+		}
+		if(sess.getAttribute("lastsearch") != null) {
+			List<Visit> lastsearch = (List<Visit>)sess.getAttribute("lastsearch");
+			for(Visit v : lastsearch) {
+				if(v.getId() == visit.getId()) {
+					v.setDate(visit.getDate());
+					v.setHour(visit.getHour());
+					v.setService(visit.getService());
+				}
+			}
+			visitRepository.save(visit);
+			model.addAttribute("visits", lastsearch);
+			return "calendar";
 		}
 		visitRepository.save(visit);
 		return "redirect:../";

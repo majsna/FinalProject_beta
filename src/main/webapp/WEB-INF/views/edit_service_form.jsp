@@ -20,6 +20,8 @@
 	</div>
 	<div class="container center_div">
 		<div class="col-sm-4 col-sm-offset-4">
+		<a href="<c:url value="/service"/>" class="btn btn-default">Go back <span class="glyphicon glyphicon-arrow-left"></span></a>
+		<hr class="style-one">
 		<form:form method="post" modelAttribute="service">
 			<form:hidden path="id"/>
 			Name:<br> 

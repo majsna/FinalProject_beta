@@ -21,9 +21,10 @@
 
 	<div class="container center_div">
 		<div class="col-sm-4 col-sm-offset-4">
-		
+			<a href="<c:url value="/patient/details/${onePatient.id}"/>" class="btn btn-default text-center">Go back <span class="glyphicon glyphicon-arrow-left"></span></a>
+			<hr class="style-one">
 			<form:form method="post" modelAttribute="visit" align="left">		
-				Date(yyyy-mm-dd):<br>
+				Date:<br>
 				<form:input path="date" class="form-control datepicker" />
 				<form:errors path="date" class="error" />
 				<span class="error">${message}</span>
