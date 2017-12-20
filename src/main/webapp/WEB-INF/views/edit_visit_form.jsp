@@ -35,9 +35,10 @@
 				</form:select>
 				<form:errors path="patient" class="error" />
 				<br>
-			Date(yyyy-mm-dd):<br>
+			Date:<br>
 				<form:input path="date" class="form-control datepicker"/>
 				<form:errors path="date" class="error" />
+				<span class="error">${message}</span>
 				<br>
 			Time:<br>
 				<form:select path="hour" class="form-control">

@@ -29,7 +29,7 @@
 					itemLabel="lastname" class="form-control" />
 				<form:errors path="patient" class="error" />
 				<br>			
-				Date(yyyy-mm-dd):<br>
+				Date:<br>
 				<form:input path="date" class="form-control datepicker" data-date-format="yyyy-mm-dd"/>
 				<form:errors path="date" class="error" />
 				<span class="error">${message}</span>

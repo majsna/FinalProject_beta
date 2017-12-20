@@ -166,6 +166,15 @@ public class VisitController {
 	public String editVisit(@Valid Visit visit, BindingResult result, @PathVariable long id, HttpSession sess, Model model) {
 		if(result.hasErrors()) {
 			return "edit_visit_form";
+		} 
+		List<Visit> visits = visitRepository.findAll();
+		for(Visit v : visits) {
+			if(v.getDate().equals(visit.getDate()) && v.getHour()==visit.getHour()) {
+				model.addAttribute("message", "Chosen term is not available. Please select a different one.");
+				Visit editedVisit = visitRepository.findOne(id);
+				model.addAttribute("visit",editedVisit);
+				return "edit_visit_form";
+			}
 		}
 		if(sess.getAttribute("lastsearch") != null) {
 			List<Visit> lastsearch = (List<Visit>)sess.getAttribute("lastsearch");

@@ -19,7 +19,8 @@
 <div class="jumbotron">
  	<h2 class="text-center">PHYSIO-APP created by MATEUSZ MEISNER</h2>
  	<p class="text-center">It is my final project of Java Web Developer Course at Coders Lab Programming School.<br>
- 	What you see is a demonstration version with fake patient data so feel free to use all the funcionality.</p>
+ 	What you see is a demonstrational version with fake patient data so feel free to use all the functionality .<br>
+ 	<i>Please do not use inappropriate language and do not delete everything ;) Thank you.</i></p>
 </div>
 </body>
 </html>

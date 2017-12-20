@@ -10,7 +10,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.Email;
 
@@ -21,11 +20,9 @@ public class Patient {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private long id;
-	
-	@Size(min=2, max=20)
+
 	private String firstname;
 	
-	@Size(min=2, max=30)
 	private String lastname;
 	
 	private long phone;
