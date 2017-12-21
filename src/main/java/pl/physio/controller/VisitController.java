@@ -133,7 +133,10 @@ public class VisitController {
 								 @Valid Visit visit,
 				                 BindingResult result, 
 				                 Model model) {
+		Patient patient = patientRepository.findOne(idp);
 		if(result.hasErrors()) {
+			model.addAttribute("onePatient",patient);
+			model.addAttribute("visit",visit);
 			return "add_visit_form_for_one";
 		}
 		List<Visit> visits = visitRepository.findAll();
@@ -143,7 +146,7 @@ public class VisitController {
 				return "add_visit_form_for_one";
 			}
 		}
-		Patient patient = patientRepository.findOne(idp);
+//		Patient patient = patientRepository.findOne(idp);
 		visit.setPatient(patient);
 		visitRepository.save(visit);
 		return "redirect:/patient/details/"+idp;

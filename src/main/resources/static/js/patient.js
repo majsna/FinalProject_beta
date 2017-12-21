@@ -66,7 +66,7 @@ $(function(){
               .done(function(responsePatient){            	
               	addPatient(responsePatient);
               	console.log(responsePatient);
-              	alert('Patient added successfully');
+              	console.log('Patient added successfully');
               })
               .fail(function(response){
               	alert('Email must be well-formed and unique in our database!');
