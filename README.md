@@ -7,5 +7,5 @@ The idea of the app came from my fiancee who recently started to act as a sole t
 
 Technologies and tools I've used in my Java app: Spring Boot, Hibernate, Validation, MySql, JavaScrip, JQuery, Bootstrap, jsp, jstl.
 
-To download and run your app on your computer you have to create your own database and replace "your_db_name", "your_username", "your_password" in application.properties file.
+To download and run your app on your computer you have to create your own database and make some changes in application.properties file. Replace "your_db_name", "your_username", "your_password" with your own data.
 
